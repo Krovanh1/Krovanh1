@@ -101,7 +101,7 @@ jobs:
           retention-days: 7
           
       - name: 上传失败截图
-        if: failure()   # 只在签到失败时上传
+        if: always()   # 只在签到失败时上传
         uses: actions/upload-artifact@v4
         with:
           name: failure-screenshots-${{ github.run_number }}
